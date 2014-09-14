@@ -1,11 +1,11 @@
-Django workshop for Beginners
+Getting Started with Django
 =============================
  
 This workshop/tutorial contains 4 different parts
 
   - Hello World
   - Hello World using Templates
-  - An Application to Add/List/Remove/Modify favorite movie names
+  - An Application to Add/List/Remove/Modify favourite movie names
   - Simple To-do application
 
 Each part has corresponding branches to begin with and complete solution.
@@ -32,7 +32,7 @@ Part - 2   (Hello World using Templates)
  - Scratch space to start: **tut2_base**
  - Complete solution :     **tut3_complete**
 
-Part - 3   (Favorite Movie Catalog)
+Part - 3   (Favourite Movie Catalogue)
 ----
 It contains 11 steps(iterations) to develop a complete solution from scratch.
 
