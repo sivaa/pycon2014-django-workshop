@@ -10,6 +10,11 @@ This workshop/tutorial contains 4 different parts
 
 Each part has corresponding branches to begin with and complete solution.
 
+Part - 0   (Setup)
+----
+**For Windows :**
+[Complete Setup Instructions](https://gist.github.com/sivaa/cf29434e5b09a0854f26)
+
 Part - 1   (Hello World)
 ----
 **Content**
