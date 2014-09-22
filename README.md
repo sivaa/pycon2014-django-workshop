@@ -12,8 +12,11 @@ Each part has corresponding branches to begin with and complete solution.
 
 Part - 0   (Setup)
 ----
-**For Windows :**
-[Complete Setup Instructions](https://gist.github.com/sivaa/cf29434e5b09a0854f26)
+**For Windows 7:**
+[Complete Setup Instructions](http://bit.ly/pycon-gswd-windows-setup)
+
+**For GNU/Linux(Ubuntu) :**
+[Complete Setup Instructions](http://bit.ly/pycon-gswd-linux-setup)
 
 Part - 1   (Hello World)
 ----
