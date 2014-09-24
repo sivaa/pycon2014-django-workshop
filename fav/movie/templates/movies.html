@@ -9,6 +9,14 @@
             {{ message }} <br> <br>
         {% endif %}
 
+        {% if movies %}
+            {% for movie in movies %}
+                <li> {{ movie.name }} </li>
+            {% endfor %}
+        {% else %}
+            No movies added so far. <br> 
+        {% endif %} <br>
+
 		<form action="/movies/" method="post"> {% csrf_token %}
             Movie Name : <input type="text" name="movie_name">
                          <input type="submit" value="Add">
