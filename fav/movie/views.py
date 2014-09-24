@@ -23,3 +23,16 @@ def movies(request):
                        "movies"  : _get_movies()})
 
     return ("Invalid Request")
+
+def remove_movie(request):
+    if request.method == 'GET':
+        movie_id = request.GET.get("id")
+        movie    = Movie.objects.get(id = movie_id)
+        movie.delete()
+        message  = "Movie '{}' is removed successfully.".format(movie.name)
+        return render(request, 
+                      "movies.html",
+                      {"message" : message,
+                       "movies"  : _get_movies()})
+
+    return ("Invalid Request")

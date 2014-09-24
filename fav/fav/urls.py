@@ -19,4 +19,6 @@ urlpatterns = patterns('',
 
     # Movie
     url(r'^movies/$', 'movie.views.movies'),
+
+    url(r'^movie/remove/$', 'movie.views.remove_movie'),
 )
