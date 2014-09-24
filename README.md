@@ -1,10 +1,11 @@
-Getting Started with Django
+Introduction to Django
 =============================
  
-This workshop/tutorial contains 4 different parts
+This workshop/tutorial contains 3 different parts
 
-  - Hello World
-  - Hello World using Templates
+  - Rampup
+     - Simple Hello World 
+     - Hello World using Templates
   - An Application to Add/List/Remove/Modify favourite movie names
   - Simple To-do application
 
@@ -18,30 +19,29 @@ Part - 0   (Setup)
 **For GNU/Linux(Ubuntu) :**
 [Complete Setup Instructions](http://bit.ly/pycon-gswd-linux-setup)
 
-Part - 1   (Hello World)
-----
-**Content**
+Part - 1   (Rampup)
+---------
+**Simple Hello World**
+ - Hello World
+ - Hello World with HTML tags
+ - Hello World with current time
+ - Hello World with Given Name (From Query String)
+
+**Hello World using Templates**
  - Simple Hello World
  - Hello World with current time
  - Hello World with Given Name (From Query String)
 
-**Branch Details**
- - Scratch space to start: **tut1_base**
- - Complete solution :     **tut1_complete**
-
-Part - 2   (Hello World using Templates)
-----
-**Content**
- - Simple Hello World
- - Hello World with current time
- - Hello World with Given Name (From Query String)
+**Guide**
+[Step by Step Instructions](http://bit.ly/pycon-gswd-rampup)
 
 **Branch Details**
- - Scratch space to start: **tut2_base**
- - Complete solution :     **tut3_complete**
+ - Scratch space to start: **rampup_base**
+ - Complete solution :     **rampup_complete**
 
-Part - 3   (Favourite Movie Catalogue)
-----
+
+Part - 2   (Favourite Movie Catalogue)
+----------
 It contains 11 steps(iterations) to develop a complete solution from scratch.
 
 **Content**
