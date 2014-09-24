@@ -4,6 +4,11 @@
 		<title>My Fav Movie List</title>
 	</head>
 	<body>
+
+        {% if message %}
+            {{ message }} <br> <br>
+        {% endif %}
+
 		<form action="/movies/" method="post"> {% csrf_token %}
             Movie Name : <input type="text" name="movie_name">
                          <input type="submit" value="Add">
