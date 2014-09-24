@@ -20,20 +20,16 @@ def movies(request):
         form = MovieForm(request.POST)
 
         if form.is_valid():
-            movie_name = form.cleaned_data["movie_name"]
-            movie_name = movie_name.strip()
+            movie_name = form.cleaned_data["movie_name"].strip()
 
-            if not movie_name:
-                message = "Enter a Movie Name"
-            elif len(movie_name) < 3:
-                message = "Not enough words!"
-            else:
-                try:
-                    Movie.objects.create(name = movie_name)
-                    message = "Movie '{}' is added successfully.".format(movie_name)
-                    form = MovieForm()
-                except IntegrityError:
-                    message =  "Movie '{}' is already exists.".format(movie_name)
+            try:
+                Movie.objects.create(name = movie_name)
+                message = "Movie '{}' is added successfully.".format(movie_name)
+                form = MovieForm()
+            except IntegrityError:
+                message =  "Movie '{}' is already exists.".format(movie_name)
+        else:
+            message = "Please correct all the validation errors below."
 
         return render(request, 
                       "movies.html",
