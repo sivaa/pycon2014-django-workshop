@@ -8,6 +8,7 @@ urlpatterns = patterns('',
 
     #url(r'^admin/', include(admin.site.urls)),
 
+    # Demo
     url(r'^hello1/', 'demo.views.hello1'),
     url(r'^hello2/', 'demo.views.hello2'),
     url(r'^hello3/', 'demo.views.hello3'),
@@ -15,4 +16,7 @@ urlpatterns = patterns('',
     url(r'^hello5/', 'demo.views.hello5'),
 	url(r'^hello6/', 'demo.views.hello6'),
 	url(r'^hello7/', 'demo.views.hello7'),
+
+    # Movie
+    url(r'^movies/$', 'movie.views.movies'),
 )
