@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.db.utils import IntegrityError
 
 from movie.models import Movie
+from movie.forms import MovieForm
 
 
 def _get_movies():
@@ -12,27 +13,33 @@ def movies(request):
     if request.method == 'GET':
         return render(request, 
                       "movies.html",
-                      {"movies"  : _get_movies()})
+                      {"movies"  : _get_movies(),
+                       "form"    : MovieForm()})
 
     if request.method == 'POST':
-        movie_name = request.POST.get("movie_name")
-        movie_name = movie_name.strip()
+        form = MovieForm(request.POST)
 
-        if not movie_name:
-            message = "Enter a Movie Name"
-        elif len(movie_name) < 3:
-            message = "Not enough words!"
-        else:
-            try:
-                Movie.objects.create(name = movie_name)
-                message = "Movie '{}' is added successfully.".format(movie_name)
-            except IntegrityError:
-                message =  "Movie '{}' is already exists.".format(movie_name)
+        if form.is_valid():
+            movie_name = form.cleaned_data["movie_name"]
+            movie_name = movie_name.strip()
+
+            if not movie_name:
+                message = "Enter a Movie Name"
+            elif len(movie_name) < 3:
+                message = "Not enough words!"
+            else:
+                try:
+                    Movie.objects.create(name = movie_name)
+                    message = "Movie '{}' is added successfully.".format(movie_name)
+                    form = MovieForm()
+                except IntegrityError:
+                    message =  "Movie '{}' is already exists.".format(movie_name)
 
         return render(request, 
                       "movies.html",
                       {"message" : message,
-                       "movies"  : _get_movies()})
+                       "movies"  : _get_movies(),
+                       "form"    : form})
 
     return ("Invalid Request")
 
@@ -49,6 +56,7 @@ def remove_movie(request):
         return render(request, 
                       "movies.html",
                       {"message" : message,
-                       "movies"  : _get_movies()})
+                       "movies"  : _get_movies(),
+                       "form"    : MovieForm()})
 
     return ("Invalid Request")
