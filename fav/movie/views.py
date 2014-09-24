@@ -39,9 +39,26 @@ def movies(request):
 
     return ("Invalid Request")
 
-def remove_movie(request):
+def remove_movie(request, movie_id):
     if request.method == 'GET':
-        movie_id = request.GET.get("id")
+
+        try:
+            movie    = Movie.objects.get(id = movie_id)
+        
+            return render(request, 
+                          "movie_delete_confirm.html", 
+                          { 'movie' : movie})
+        except Movie.DoesNotExist as e:
+            message = "Given movie does not exists."
+        
+            return render(request, 
+                          "movies.html",
+                          {"message" : message,
+                           "movies"  : _get_movies(),
+                           "form"    : MovieForm()})
+
+    if request.method == 'POST':
+        
         try:
             movie    = Movie.objects.get(id = movie_id)
             movie.delete()
@@ -54,5 +71,56 @@ def remove_movie(request):
                       {"message" : message,
                        "movies"  : _get_movies(),
                        "form"    : MovieForm()})
+
+    return ("Invalid Request")
+
+def edit_movie(request, movie_id):
+    if request.method == 'GET':
+
+        try:
+            movie    = Movie.objects.get(id = movie_id)
+            form = MovieForm(initial = {'movie_name': movie.name })
+            return render(request, 
+                          "movie_edit.html", 
+                          { 'form' : form})
+        except Movie.DoesNotExist as e:
+            message = "Given movie does not exists."
+        
+            return render(request, 
+                          "movies.html",
+                          {"message" : message,
+                           "movies"  : _get_movies(),
+                           "form"    : MovieForm()})
+
+    if request.method == 'POST':
+        form = MovieForm(request.POST)
+
+        if form.is_valid():
+            movie_name = form.cleaned_data["movie_name"].strip()
+
+            try:
+                movie = Movie.objects.get(id = movie_id)
+                movie.name = movie_name
+                movie.save()
+                message = "Movie '{}' is  successfully.".format(movie_name)
+                form = MovieForm()
+            except IntegrityError:
+                message =  "Movie '{}' is already exists.".format(movie_name)
+            except Movie.DoesNotExist as e:
+                message = "Given movie does not exists."
+
+        else:
+            message = "Please correct all the validation errors below."
+
+            return render(request, 
+                          "movie_edit.html", 
+                          { 'form' : form})
+
+
+        return render(request, 
+                      "movies.html",
+                      {"message" : message,
+                       "movies"  : _get_movies(),
+                       "form"    : form})
 
     return ("Invalid Request")

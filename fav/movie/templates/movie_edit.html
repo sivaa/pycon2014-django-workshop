@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Fav Movie List - Edit</title>
+	</head>
+	<body>
+
+        {% if message %}
+            {{ message }} <br> <br>
+        {% endif %}
+
+		<form method="post"> {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Edit">
+        </form>
+
+	</body>
+</html>
