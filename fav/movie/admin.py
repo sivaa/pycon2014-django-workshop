@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from movie.models import Movie
+from movie.forms import MovieForm
+
+
+class MovieAdmin(admin.ModelAdmin):
+    form = MovieForm
+
+ 
+admin.site.register(Movie, MovieAdmin)
