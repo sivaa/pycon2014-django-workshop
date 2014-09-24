@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Fav Movie List</title>
+    </head>
+    <body>
+        <form action="/movies/" method="post"> {% csrf_token %}
+            Movie Name : <input type="text" name="movie_name">
+                         <input type="submit" value="Add">
+        </form>
+    </body>
+</html>
