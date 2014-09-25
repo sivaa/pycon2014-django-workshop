@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{%  block content %}
+
+        <form method="post"> {% csrf_token %}
+            Would you like to delete the task <b> {{ task.name }} </b> ?
+            <input type="submit" value="Yep. Sure">
+        </form>
+
+{% endblock %}
