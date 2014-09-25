@@ -45,6 +45,7 @@ Part - 2   (Favourite Movie Catalogue)
 It contains 11 steps(iterations) to develop a complete solution from scratch.
 
 **Content**
+ - **Step 0:** Create Movie app and register it
  - **Step 1:** Create HTML form for adding Movie Names 
  - **Step 2:** Implement Movie Add feature & Persist in the database with the successful message
  - **Step 3:** Implement messaging in the same page
@@ -60,7 +61,8 @@ It contains 11 steps(iterations) to develop a complete solution from scratch.
  The iteration steps are described in details in this [Gist](http://bit.ly/pycon-gswd-movie-app).
 
 **Branch Details**
- - Scratch space to start: **movie_00**
+ - Scratch space to start: **movie_base**
+ - Step 0 Completed :      **movie_00**
  - Step 1 Completed :      **movie_01**
  - Step 2 Completed :      **movie_02**
  - Step 3 Completed :      **movie_03**
