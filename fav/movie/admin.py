@@ -5,7 +5,8 @@ from movie.forms import MovieForm
 
 
 class MovieAdmin(admin.ModelAdmin):
-    form = MovieForm
+    # form = MovieForm
+    pass
 
  
 admin.site.register(Movie, MovieAdmin)

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.db.utils import IntegrityError
 
@@ -11,9 +11,15 @@ def _get_movies():
 
 def movies(request):
     if request.method == 'GET':
+
+        message = request.session.get('message', '')
+        if message:
+            request.session['message'] = ''
+
         return render(request, 
                       "movies.html",
                       {"movies"  : _get_movies(),
+                       "message" : message,
                        "form"    : MovieForm()})
 
     if request.method == 'POST':
@@ -63,6 +69,9 @@ def remove_movie(request, movie_id):
             movie    = Movie.objects.get(id = movie_id)
             movie.delete()
             message  = "Movie '{}' is removed successfully.".format(movie.name)
+            request.session['message'] = message
+            return redirect('/movies/')
+
         except Movie.DoesNotExist as e:
             message = "Given movie does not exists."
 
@@ -102,10 +111,17 @@ def edit_movie(request, movie_id):
                 movie = Movie.objects.get(id = movie_id)
                 movie.name = movie_name
                 movie.save()
-                message = "Movie '{}' is  successfully.".format(movie_name)
+                message = "Movie '{}' is updated successfully.".format(movie_name)
                 form = MovieForm()
+                request.session['message'] = message
+                return redirect('/movies/')
             except IntegrityError:
                 message =  "Movie '{}' is already exists.".format(movie_name)
+                return render(request, 
+                              "movie_edit.html",
+                              { 'form' : form,
+                                'message' : message})
+
             except Movie.DoesNotExist as e:
                 message = "Given movie does not exists."
 
@@ -113,8 +129,9 @@ def edit_movie(request, movie_id):
             message = "Please correct all the validation errors below."
 
             return render(request, 
-                          "movie_edit.html", 
-                          { 'form' : form})
+                          "movie_edit.html",                          
+                          { 'form' : form,
+                            'message' : message})
 
 
         return render(request, 
