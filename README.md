@@ -57,32 +57,31 @@ It contains 11 steps(iterations) to develop a complete solution from scratch.
  - **Step 10:** Implement Edit/Modify feature
  - **Step 11:** Enable Admin
 
- The iteration steps are described in details in this [Gist].
+ The iteration steps are described in details in this [Gist](http://bit.ly/pycon-gswd-movie-app).
 
 **Branch Details**
- - Scratch space to start: **tut3_base**
- - Step 1 Completed :      **tut3_step1**
- - Step 2 Completed :      **tut3_step2**
- - Step 3 Completed :      **tut3_step3**
- - Step 4 Completed :      **tut3_step4**
- - Step 5 Completed :      **tut3_step5**
- - Step 6 Completed :      **tut3_step6**
- - Step 7 Completed :      **tut3_step7**
- - Step 8 Completed :      **tut3_step8**
- - Step 9 Completed :      **tut3_step9**
- - Step 10 Completed :     **tut3_step10**
- - Step 11 Completed :     **tut3_step11**
- - Complete solution :     **tut3_complete**
+ - Scratch space to start: **movie_00**
+ - Step 1 Completed :      **movie_01**
+ - Step 2 Completed :      **movie_02**
+ - Step 3 Completed :      **movie_03**
+ - Step 4 Completed :      **movie_04**
+ - Step 5 Completed :      **movie_05**
+ - Step 6 Completed :      **movie_06**
+ - Step 7 Completed :      **movie_07**
+ - Step 8 Completed :      **movie_08**
+ - Step 9 Completed :      **movie_09**
+ - Step 10 Completed :     **movie_010**
+ - Step 11 Completed :     **movie_011**
+ - Complete solution :     **movie_complete**
 
-Part - 4   (To-do Application)
-----
+Part - 3   (To-do Application)
+---------
 **Content**
 
-This To-do application can be implemented by following the steps described Part 3. Each task in todo list will have task name, priority, late_date and completed/done flag.
+This To-do application can be implemented by following the steps described Part 2. Each task in todo list will have task name, priority, late_date and completed/done flag.
 
 **Branch Details**
 
-It has only a reference implementation branch called **tut4**.
+It has only a reference implementation branch called **todo**.
 
-[Gist]: https://gist.github.com/sivaa/8486393
     
