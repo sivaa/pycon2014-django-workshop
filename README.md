@@ -88,5 +88,11 @@ It has only a reference implementation branch called **todo**.
 
 Others
 -------
-Server Setup in AWS [Guide] (http://bit.ly/pycon-gswd-server-setup)
+**Server Setup in AWS**
+ - Branch : **movie_server_configs**
+ - [Guide] (http://bit.ly/pycon-gswd-server-setup)
     
+**Sample TDD Application**
+ - Branch : **movie_sample_tdd**
+ - [Guide] (http://bit.ly/pycon-gswd-tdd)
+ - 
