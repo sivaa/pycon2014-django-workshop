@@ -95,4 +95,3 @@ Others
 **Sample TDD Application**
  - Branch : **movie_sample_tdd**
  - [Guide] (http://bit.ly/pycon-gswd-tdd)
- - 
