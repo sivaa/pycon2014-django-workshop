@@ -86,4 +86,7 @@ This To-do application can be implemented by following the steps described Part 
 
 It has only a reference implementation branch called **todo**.
 
+Others
+-------
+Server Setup in AWS [Guide] (http://bit.ly/pycon-gswd-server-setup)
     
