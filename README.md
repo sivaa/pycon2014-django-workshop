@@ -17,8 +17,8 @@ Part - 0   (Setup)
 [Complete Setup Instructions](http://bit.ly/pycon-gswd-windows-setup)
 
 ** For GNU/Linux :**
-[Ubuntu - Complete Setup Instructions](http://bit.ly/pycon-gswd-linux-setup)
-[CentOS - Complete Setup Instructions](http://bit.ly/pycon-gswd-centos-setup)
+- [Ubuntu - Complete Setup Instructions](http://bit.ly/pycon-gswd-linux-setup)
+- [CentOS - Complete Setup Instructions](http://bit.ly/pycon-gswd-centos-setup)
 
 Part - 1   (Rampup)
 ---------
