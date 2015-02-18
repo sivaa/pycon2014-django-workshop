@@ -16,7 +16,7 @@ Part - 0   (Setup)
 **For Windows 7:**
 [Complete Setup Instructions](http://bit.ly/pycon-gswd-windows-setup)
 
-** For GNU/Linux :**
+**For GNU/Linux :**
 - [Ubuntu - Complete Setup Instructions](http://bit.ly/pycon-gswd-linux-setup)
 - [CentOS - Complete Setup Instructions](http://bit.ly/pycon-gswd-centos-setup)
 
